@@ -43,22 +43,10 @@ def show_countdown():
     countdown.penup()
     countdown.goto(0, 0)
     countdown.color("red")
-    countdown.write("3", align="center", font=("Arial", 48, "bold"))
-    time.sleep(1)
-    countdown.clear()
-
-    countdown.write("2", align="center", font=("Arial", 48, "bold"))
-    time.sleep(1)
-    countdown.clear()
-
-    countdown.write("1", align="center", font=("Arial", 48, "bold"))
-    time.sleep(1)
-    countdown.clear()
-
-    countdown.color("green")
-    countdown.write("GO!", align="center", font=("Arial", 48, "bold"))
-    time.sleep(1)
-    countdown.clear()
+    for number in ["3", "2", "1"]:
+            countdown.write(number, align="center", font=("Arial", 48, "bold"))
+            time.sleep(1)
+            countdown.clear()
 def turtle_list():
     global turtles
     colors=["red","orange","yellow","green","blue","purple"]
@@ -104,7 +92,7 @@ while is_race_on:
         if turtle.xcor()>200:
             winning_color=turtle.pencolor()
             if winning_color==user_input.lower():
-                print(f"You won! The {winning_color} turlte is the winner.")
+                print(f"You won! The {winning_color} turtle is the winner.")
             else:
                 print(f"You lost! The {winning_color} turtle is the winner.")
             is_race_on=False
